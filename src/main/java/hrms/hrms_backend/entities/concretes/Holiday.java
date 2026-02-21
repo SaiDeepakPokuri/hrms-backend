@@ -1,0 +1,29 @@
+package hrms.hrms_backend.entities.concretes;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "holidays")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Holiday {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private LocalDate holidayDate;
+
+    @Column(nullable = false)
+    private String name;
+
+    private int year;
+}
+
