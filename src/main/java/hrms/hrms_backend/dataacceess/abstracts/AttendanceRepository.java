@@ -28,7 +28,8 @@ public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
     @Query("""
     SELECT a.attendanceDate, COUNT(a)
     FROM Attendance a
-    WHERE MONTH(a.attendanceDate) = MONTH(CURRENT_DATE)
+    WHERE EXTRACT(MONTH FROM a.attendanceDate) =
+          EXTRACT(MONTH FROM CURRENT_DATE)
     GROUP BY a.attendanceDate
     ORDER BY a.attendanceDate
     """)
