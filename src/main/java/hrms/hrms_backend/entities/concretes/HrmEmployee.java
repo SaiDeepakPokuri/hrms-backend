@@ -55,3 +55,4 @@ public class HrmEmployee {
     @Enumerated(EnumType.STRING)
     private EmploymentStatus employmentStatus;
 }
+
