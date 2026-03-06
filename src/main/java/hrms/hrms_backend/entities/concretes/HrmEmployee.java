@@ -5,6 +5,7 @@ import hrms.hrms_backend.entities.enums.EmploymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -48,6 +49,7 @@ public class HrmEmployee {
 
     @NotNull(message = "Joining date is required")
     @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate joiningDate;
 
     @Enumerated(EnumType.STRING)
